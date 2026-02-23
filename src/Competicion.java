@@ -28,13 +28,13 @@ public class Competicion {
     //Sergio
 
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
-        Carrera carreranueva = new Carrera(circuito,vueltas, ,pilotos);
+        Carrera carreranueva = new Carrera(circuito,vueltas,1,pilotos);
         if (campeonatoIniciado) {
             return false;
         } else {
             boolean yaexiste = false;
             for (int i = 0; i < carreras.length; i++) {
-                if (carreras[i].get() == circuito) {
+                if (carreras[i].() == circuito) {
                     return false;
                     yaexiste = true;
                 }
