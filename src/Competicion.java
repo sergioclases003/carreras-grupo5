@@ -8,8 +8,11 @@ public class Competicion {
     // Métodos
 
     public boolean anhadirPiloto(Piloto piloto) {
-        // TODO: implementar
-        return false;
+        //TODO poner a prueba de errores
+        pilotos[contadorPilotos] = piloto;
+        contadorPilotos++;
+        System.out.println("Añadiendo el piloto " + piloto.getNombre() + " a la competición " + nombre);
+        return true;
     }
 
 
