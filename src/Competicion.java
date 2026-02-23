@@ -40,28 +40,23 @@ public class Competicion {
     //Sergio
 
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
-        Carrera carreranueva = new Carrera(circuito,vueltas,1,pilotos);
+        Carrera carreranueva = new Carrera(circuito,vueltas,pilotos);
         if (campeonatoIniciado) {
             return false;
         } else {
-
-
-            boolean yaexiste = false;
             for (int i = 0; i < carreras.length; i++) {
                 if (carreras[i].getCircuito() == circuito) {
-                    yaexiste = true;
+
                     return false;
 
                 }
             }
-            if (!yaexiste) {
-                Carrera[] arraynuevo = new Carrera[carreras.length + 1];
-                for (int i = 0; i < carreras.length; i++) {
-                    arraynuevo[i] = carreras[i];
-
-                }
-                arraynuevo[arraynuevo.length -1] = carreranueva ;
-                carreras = arraynuevo;
+            Carrera[] arraynuevo = new Carrera[carreras.length + 1];
+            for (int i = 0; i < carreras.length; i++) {
+                arraynuevo[i] = carreras[i];
+            }
+            arraynuevo[arraynuevo.length -1] = carreranueva ;
+            carreras = arraynuevo;
 
 
 
@@ -69,7 +64,8 @@ public class Competicion {
             return false;
         }
         public void imprimirResultadoEscuderia () {
-            // TODO: implementar
+            for ( int i = 0; i<pilotos.length;i++){
+                
         }
 
     }
