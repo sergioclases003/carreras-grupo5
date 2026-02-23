@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Competicion {
     private String nombre;
     private Piloto[] pilotos;
@@ -31,7 +33,11 @@ public class Competicion {
         Carrera carreranueva = new Carrera(circuito,vueltas,1,pilotos);
         if (campeonatoIniciado) {
             return false;
+        } else if (carreras.length == 0) {
+            carreras[0] = carreranueva;
         } else {
+
+
             boolean yaexiste = false;
             for (int i = 0; i < carreras.length; i++) {
                 if (carreras[i].() == circuito) {
@@ -45,7 +51,8 @@ public class Competicion {
                     arraynuevo[i] = carreras[i];
 
                 }
-                arraynuevo[arraynuevo.length] = carreranueva ;
+                arraynuevo[arraynuevo.length -1] = carreranueva ;
+                carreras = arraynuevo;
 
 
 
