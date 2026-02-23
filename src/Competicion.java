@@ -9,8 +9,8 @@ public class Competicion {
 
     public boolean anhadirPiloto(Piloto piloto) {
         //TODO poner a prueba de errores
-        pilotos[contadorPilotos] = piloto;
         contadorPilotos++;
+        pilotos[contadorPilotos] = piloto;
         System.out.println("Añadiendo el piloto " + piloto.getNombre() + " a la competición " + nombre);
         return true;
     }
