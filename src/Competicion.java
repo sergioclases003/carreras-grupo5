@@ -10,6 +10,16 @@ public class Competicion {
     // Métodos
 
     public boolean anhadirPiloto(Piloto piloto) {
+        if (campeonatoIniciado){
+            System.out.println("No se puede añadir a " + piloto.getNombre() + ": El campeonato ya ha comenzado.");
+            return false;
+        }
+        for (int i = 0; i < contadorPilotos; i++) {
+            if (pilotos[i].getNombre().equals(piloto.getNombre())) {
+                System.out.println("El piloto " + piloto.getNombre() + " ya está inscrito.");
+                return false;
+            }
+        }
         //TODO poner a prueba de errores
         contadorPilotos++;
         pilotos[contadorPilotos] = piloto;
