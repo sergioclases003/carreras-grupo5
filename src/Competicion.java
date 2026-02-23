@@ -10,10 +10,7 @@ public class Competicion {
         return false;
     }
 
-    public boolean anhadirCarrera(Circuito circuito, int vueltas) {
-        // TODO: implementar
-        return false;
-    }
+
 
     public boolean arrancarCampeonato() {
         // TODO: implementar
@@ -24,6 +21,12 @@ public class Competicion {
         // TODO: implementar
     }
 
+    //Sergio
+
+    public boolean anhadirCarrera(Circuito circuito, int vueltas) {
+        // TODO: implementar
+        return false;
+    }
     public void imprimirResultadoEscuderia() {
         // TODO: implementar
     }
