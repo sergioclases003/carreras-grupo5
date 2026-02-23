@@ -4,34 +4,28 @@ public class Competicion {
     private String nombre;
     private Piloto[] pilotos;
     private Carrera[] carreras;
+    private int contadorPilotos;
     private boolean campeonatoIniciado;
 
     // Métodos
 
     public boolean anhadirPiloto(Piloto piloto) {
-
         if (campeonatoIniciado){
             System.out.println("No se puede añadir a " + piloto.getNombre() + ": El campeonato ya ha comenzado.");
             return false;
         }
-        for (int i = 0; i < pilotos.length; i++) {
+        for (int i = 0; i < contadorPilotos; i++) {
             if (pilotos[i].getNombre().equals(piloto.getNombre())) {
                 System.out.println("El piloto " + piloto.getNombre() + " ya está inscrito.");
                 return false;
             }
         }
-        
-        Piloto[] nuevoArray = new Piloto[pilotos.length + 1];
-        for (int i = 0; i < pilotos.length; i++) {
-            nuevoArray[i] = pilotos[i];
-        }
-        nuevoArray[pilotos.length-1] = piloto;
-        this.pilotos = nuevoArray;
+        //TODO poner a prueba de errores
+        contadorPilotos++;
+        pilotos[contadorPilotos] = piloto;
         System.out.println("Añadiendo el piloto " + piloto.getNombre() + " a la competición " + nombre);
         return true;
     }
-
-
 
 
     public boolean arrancarCampeonato() {
