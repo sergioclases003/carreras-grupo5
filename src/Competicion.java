@@ -4,12 +4,7 @@ public class Competicion {
     private Carrera[] carreras;
     private boolean comenzado;
 
-    public Competicion(String nombre, Piloto[] pilotos, Carrera[] carreras, boolean comenzado) {
-        this.nombre = nombre;
-        this.pilotos = pilotos;
-        this.carreras = carreras;
-        this.comenzado = comenzado;
-    }
+
 
     // Métodos
 
@@ -32,7 +27,7 @@ public class Competicion {
     //Sergio
 
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
-        Carrera nuevacarrera
+        Carrera carreranueva = new carreranueva(circuito,vueltas,)
         if (comenzado){
             return false;
         }else{
