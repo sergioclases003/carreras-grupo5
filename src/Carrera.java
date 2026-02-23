@@ -35,7 +35,7 @@ public class Carrera {
 
     // asigna participantes e inicializa el array de clasificación con el mismo tamaño
     public void setParticipantes(Piloto[] participantes) {
-        // por si te pasan un array nulo
+        // por si se pasan un array nulo
         if (participantes != null) {
             this.participantes = participantes;
             this.clasificacion = new Piloto[participantes.length];
