@@ -35,7 +35,20 @@ public class Carrera {
 
     // asigna participantes e inicializa el array de clasificación con el mismo tamaño
     public void setParticipantes(Piloto[] participantes) {
-        this.participantes = participantes;
-        this.clasificacion = new Piloto[participantes.length];
+        // por si se pasan un array nulo
+        if (participantes != null) {
+            this.participantes = participantes;
+            this.clasificacion = new Piloto[participantes.length];
+        }
+    }
+
+    // para que la competición no repita circuitos
+    public Circuito getCircuito() {
+        return circuito;
+    }
+
+    // el estado de la carrera
+    public boolean isCorrida() {
+        return corrida;
     }
 }
