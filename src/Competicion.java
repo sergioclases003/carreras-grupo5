@@ -25,13 +25,13 @@ public class Competicion {
     //Sergio
 
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
-        //Carrera carreranueva = new carreranueva(circuito,vueltas,)//
+        Carrera carreranueva = new Carrera(circuito,vueltas, ,pilotos);
         if (campeonatoIniciado) {
             return false;
         } else {
             boolean yaexiste = false;
             for (int i = 0; i < carreras.length; i++) {
-                if (carreras[i].getcircuito() == circuito) {
+                if (carreras[i].get() == circuito) {
                     return false;
                     yaexiste = true;
                 }
@@ -42,7 +42,8 @@ public class Competicion {
                     arraynuevo[i] = carreras[i];
 
                 }
-                arraynuevo[arraynuevo.length] =
+                arraynuevo[arraynuevo.length] = carreranueva ;
+
 
 
             }
