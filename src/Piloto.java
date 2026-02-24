@@ -6,11 +6,13 @@ public class Piloto {
     private Coche coche;
     private double habilidad;
     private Random rand = new Random();
+    private String escuderia;
 
     public Piloto(String nombre, int edad, Coche coche, String nivelHabilidad) {
         this.nombre = nombre;
         this.edad = edad;
         this.coche = coche;
+        this.escuderia= escuderia;
 
         switch (nivelHabilidad) {
             case "Excelente":
@@ -44,5 +46,8 @@ public class Piloto {
 
     public Coche getCoche() {
         return coche;
+    }
+    public String getEscuderia() {
+        return escuderia;
     }
 }
