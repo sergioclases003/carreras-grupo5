@@ -26,6 +26,35 @@ public class Carrera {
     }
 
 
+    // métodos y getters y setters
 
-    
+    // Calcula la distancia total de la carrera (longitud del circuito * vueltas)
+    public int obtenerLongitudTotal() {
+        return circuito.getLongitud() * vueltas;
+    }
+
+
+    // array de clasificación (pilotos ordenados por puesto)
+    public Piloto[] getClasificacion() {
+        return clasificacion;
+    }
+
+    //  participantes e inicializa el array de clasificación con el mismo tamaño
+    public void setParticipantes(Piloto[] participantes) {
+        if (participantes != null) {
+            this.participantes = participantes;
+            this.clasificacion = new Piloto[participantes.length];
+        }
+    }
+
+    // devuelve el circuito de la carrera (útil para que la competición no repita circuitos)
+    public Circuito getCircuito() {
+        return circuito;
+    }
+
+    // devuelve si la carrera ya se ha corrido o no
+    public boolean isCorrida() {
+        return corrida;
+    }
+
 }
