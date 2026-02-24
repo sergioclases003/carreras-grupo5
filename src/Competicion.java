@@ -101,7 +101,7 @@ public class Competicion {
             return false;
         } else {
             for (int i = 0; i < carreras.length; i++) {
-                if (carreras[i].getCircuito() == circuito) {
+                if (carreras[i].getCircuito().equals(circuito)) {
                     System.out.println("Este circuito ya pertenece a esta competicion y tiene una carrera asignada");
                     return false;
 
