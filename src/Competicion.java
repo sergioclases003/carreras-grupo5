@@ -4,7 +4,6 @@ public class Competicion {
     private String nombre;
     private Piloto[] pilotos;
     private Carrera[] carreras;
-    private int contadorPilotos;
     private boolean campeonatoIniciado;
 
     // Métodos
@@ -26,7 +25,7 @@ public class Competicion {
         for (int i = 0; i < pilotos.length; i++) {
             nuevoArray[i] = pilotos[i];
         }
-        nuevoArray[.length-1] = piloto;
+        nuevoArray[nuevoArray.length-1] = piloto;
         this.pilotos = nuevoArray;
         System.out.println("Añadiendo el piloto " + piloto.getNombre() + " a la competición " + nombre);
         return true;
@@ -34,8 +33,22 @@ public class Competicion {
 
 
     public boolean arrancarCampeonato() {
-        // TODO: implementar
-        return false;
+        if (campeonatoIniciado) {
+            System.out.println("El campeonato " + nombre + " ya se ejecutó anteriormente.");
+            return false;
+        }
+
+        System.out.println("=== ARRANCANDO CAMPEONATO: " + nombre + " ===");
+
+        // Recorrer carreras
+        for (int i = 0; i < carreras.length; i++) {
+            if (carreras[i] != null) {
+                carreras[i].ejecutarCarrera();
+            }
+        }
+
+        campeonatoIniciado = true;
+        return true;
     }
 
     public void imprimirResultado() {
@@ -71,12 +84,41 @@ public class Competicion {
             return true;
         }
         public void imprimirResultadoEscuderia () {
-            for ( int i = 0; i<pilotos.length;i++){
-                for (int k = 0 ; k<pilotos.length;k++){
+            String[] escuderiasProcesadas = new String[pilotos.length];
+            int contadorEsc = 0;
 
+            for (int i = 0; i < pilotos.length; i++) {
+
+                String escActual = pilotos[i].getEscuderia();
+
+                // Comprobar si ya hemos procesado esta escudería
+                boolean yaProcesada = false;
+                for (int j = 0; j < contadorEsc; j++) {
+                    if (escuderiasProcesadas[j].equals(escActual)) {
+                        yaProcesada = true;
+                        break;
+                    }
                 }
+
+                if (yaProcesada) {
+                    continue;
+                }
+
+                int totalPuntos = 0;
+                for (int k = 0; k < pilotos.length; k++) {
+                    if (pilotos[k].getEscuderia().equals(escActual)) {
+                        totalPuntos += pilotos[k].getPuntos();
+                    }
+                }
+                escuderiasProcesadas[contadorEsc] = escActual;
+                contadorEsc++;
                 
+                System.out.println("Escudería: " + escActual + " → Puntos totales: " + totalPuntos);
+            }
         }
+
+
+}
 
     }
 }
