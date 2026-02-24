@@ -3,7 +3,7 @@
 Este es el ejercicio de la segunda evaluación. Utilizando todo lo aprendido hasta ahora, tenéis que simular una competición de Formula 1. Para ello tendréis que crear varias clases que representen objetos/conceptos del mundo real, como Coche o Carrera, y una clase que controle el flujo del programa. 
 
 En nuestro sistema, tendremos **coches** y **pilotos**. Un piloto tiene SIEMPRE asignado un coche, y siempre el mismo coche. A lo largo de una **competición** se harán varias **carreras** (una carrera ocurre en un **circuito**). Simulando los resultados de las carreras, la competición nos dirá cómo ha sido la clasificación. 
-
+    
 ## Reglas 
 
 **Es obligatorio:** 

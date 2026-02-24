@@ -53,23 +53,7 @@ public class Competicion {
 
     public void imprimirResultado() {
         Piloto[] rankingPilotos = new Piloto[pilotos.length];
-        int[] rankingPuntos = new int[pilotos.length];
-
-        // Calcular puntos
-        for (int i = 0; i < pilotos.length; i++) {
-            rankingPilotos[i] = pilotos[i];
-            int sumaPuntos = 0;
-
-            for (int j = 0; j < carreras.length; j++) {
-                if (carreras[j] != null) {
-                    int posicion = carreras[j].getPosicionDePiloto(pilotos[i]);
-                    if (posicion == 1) sumaPuntos += 10;
-                    else if (posicion == 2) sumaPuntos += 8;
-                    else if (posicion == 3) sumaPuntos += 5;
-                }
-            }
-            rankingPuntos[i] = sumaPuntos;
-        }
+        int[] rankingPuntos =calcularPuntos(); 
 
         // Ordenar por puntos
         for (int i = 1; i < rankingPuntos.length; i++) {
