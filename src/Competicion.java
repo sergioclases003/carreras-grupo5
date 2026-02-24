@@ -52,7 +52,44 @@ public class Competicion {
     }
 
     public void imprimirResultado() {
-        // TODO: implementar
+        Piloto[] rankingPilotos = new Piloto[pilotos.length];
+        int[] rankingPuntos = new int[pilotos.length];
+
+        // Calcular puntos
+        for (int i = 0; i < pilotos.length; i++) {
+            rankingPilotos[i] = pilotos[i];
+            int sumaPuntos = 0;
+
+            for (int j = 0; j < carreras.length; j++) {
+                if (carreras[j] != null) {
+                    int posicion = carreras[j].getPosicionDePiloto(pilotos[i]);
+                    if (posicion == 1) sumaPuntos += 10;
+                    else if (posicion == 2) sumaPuntos += 8;
+                    else if (posicion == 3) sumaPuntos += 5;
+                }
+            }
+            rankingPuntos[i] = sumaPuntos;
+        }
+
+        // Ordenar por puntos
+        for (int i = 1; i < rankingPuntos.length; i++) {
+            int puntosAux = rankingPuntos[i];
+            Piloto pilotoAux = rankingPilotos[i];
+            int j = i - 1;
+
+            while (j >= 0 && rankingPuntos[j] < puntosAux) {
+                rankingPuntos[j + 1] = rankingPuntos[j];
+                rankingPilotos[j + 1] = rankingPilotos[j];
+                j--;
+            }
+            rankingPuntos[j + 1] = puntosAux;
+            rankingPilotos[j + 1] = pilotoAux;
+        }
+
+        System.out.println("\n=== CLASIFICACIÓN FINAL DE PILOTOS ===");
+        for (int i = 0; i < rankingPilotos.length; i++) {
+            System.out.println((i + 1) + "º - " + rankingPilotos[i].getNombre() + ": " + rankingPuntos[i] + " pts");
+        }
     }
 
     //Sergio
