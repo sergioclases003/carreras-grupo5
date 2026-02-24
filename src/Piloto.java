@@ -8,7 +8,7 @@ public class Piloto {
     private Random rand = new Random();
     private String escuderia;
 
-    public Piloto(String nombre, int edad, Coche coche, String nivelHabilidad) {
+    public Piloto(String nombre, int edad, Coche coche, String nivelHabilidad, String escuderia) {
         this.nombre = nombre;
         this.edad = edad;
         this.coche = coche;
