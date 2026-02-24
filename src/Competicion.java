@@ -45,7 +45,7 @@ public class Competicion {
     //Sergio
 
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
-        Carrera carreranueva = new Carrera(circuito,vueltas,pilotos);
+        Carrera carreraNueva = new Carrera(circuito,vueltas,pilotos);
         if (campeonatoIniciado) {
             System.out.println("La competicion ya ha empezado no se pueden añadir carreras");
             return false;
@@ -57,13 +57,13 @@ public class Competicion {
 
                 }
             }
-            Carrera[] arraynuevo = new Carrera[carreras.length + 1];
+            Carrera[] arrayNuevo = new Carrera[carreras.length + 1];
             for (int i = 0; i < carreras.length; i++) {
-                arraynuevo[i] = carreras[i];
+                arrayNuevo[i] = carreras[i];
             }
-            arraynuevo[arraynuevo.length -1] = carreranueva ;
-            carreras = arraynuevo;
-            System.out.println("Carrera añadida correctamente al campeonato");
+            arrayNuevo[arrayNuevo.length -1] = carreraNueva ;
+            carreras = arrayNuevo;
+            System.out.println("Carrera añadida correctamente al campeonato...");
 
 
 
@@ -72,6 +72,9 @@ public class Competicion {
         }
         public void imprimirResultadoEscuderia () {
             for ( int i = 0; i<pilotos.length;i++){
+                for (int k = 0 ; k<pilotos.length;k++){
+
+                }
                 
         }
 
