@@ -122,21 +122,8 @@ public class Competicion {
         }
         public void imprimirResultadoEscuderia () {
             String[] escuderiasProcesadas = new String[pilotos.length];
-            int[] rankingPuntos = new int[pilotos.length];
+            int[] rankingPuntos = calcularPuntos();
 
-            for (int i = 0; i < pilotos.length; i++) {
-                int sumaPuntos = 0;
-
-                for (int j = 0; j < carreras.length; j++) {
-                    if (carreras[j] != null) {
-                        int posicion = carreras[j].getPosicionDePiloto(pilotos[i]);
-                        if (posicion == 1) sumaPuntos += 10;
-                        else if (posicion == 2) sumaPuntos += 8;
-                        else if (posicion == 3) sumaPuntos += 5;
-                    }
-                }
-                rankingPuntos[i] = sumaPuntos;
-            }
             int contadorEsc = 0;
 
             for (int i = 0; i < pilotos.length; i++) {
@@ -167,6 +154,25 @@ public class Competicion {
 
                 System.out.println("Escudería: " + escActual + " → Puntos totales: " + totalPuntos);
             }
+        }
+        public int [] calcularPuntos(){
+            int[] rankingPuntos = new int[pilotos.length];
+            for (int i = 0; i < pilotos.length; i++) {
+
+                int sumaPuntos = 0;
+
+                for (int j = 0; j < carreras.length; j++) {
+                    if (carreras[j] != null) {
+                        int posicion = carreras[j].getPosicionDePiloto(pilotos[i]);
+                        if (posicion == 1) sumaPuntos += 10;
+                        else if (posicion == 2) sumaPuntos += 8;
+                        else if (posicion == 3) sumaPuntos += 5;
+                    }
+                }
+                rankingPuntos[i] = sumaPuntos;
+            }
+            return  rankingPuntos;
+
         }
 
 
