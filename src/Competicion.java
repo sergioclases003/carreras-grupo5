@@ -26,7 +26,7 @@ public class Competicion {
         for (int i = 0; i < pilotos.length; i++) {
             nuevoArray[i] = pilotos[i];
         }
-        nuevoArray[pilotos.length-1] = piloto;
+        nuevoArray[nuevoArray.length-1] = piloto;
         this.pilotos = nuevoArray;
         System.out.println("Añadiendo el piloto " + piloto.getNombre() + " a la competición " + nombre);
         return true;
