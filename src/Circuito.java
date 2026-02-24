@@ -16,3 +16,6 @@ public class Circuito {
         this.longitud = longitud;
     }
 }
+
+
+
