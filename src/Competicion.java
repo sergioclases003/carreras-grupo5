@@ -112,7 +112,7 @@ public class Competicion {
                 }
                 escuderiasProcesadas[contadorEsc] = escActual;
                 contadorEsc++;
-                
+
                 System.out.println("Escudería: " + escActual + " → Puntos totales: " + totalPuntos);
             }
         }
