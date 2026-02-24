@@ -53,7 +53,7 @@ public class Competicion {
 
     public void imprimirResultado() {
         Piloto[] rankingPilotos = new Piloto[pilotos.length];
-        int[] rankingPuntos =calcularPuntos();
+        int[] rankingPuntos =calcularPuntos(); 
 
         // Ordenar por puntos
         for (int i = 1; i < rankingPuntos.length; i++) {
