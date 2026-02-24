@@ -4,7 +4,6 @@ public class Competicion {
     private String nombre;
     private Piloto[] pilotos;
     private Carrera[] carreras;
-    private int contadorPilotos;
     private boolean campeonatoIniciado;
 
     // Métodos
@@ -34,8 +33,22 @@ public class Competicion {
 
 
     public boolean arrancarCampeonato() {
-        // TODO: implementar
-        return false;
+        if (campeonatoIniciado) {
+            System.out.println("El campeonato " + nombre + " ya se ejecutó anteriormente.");
+            return false;
+        }
+
+        System.out.println("=== ARRANCANDO CAMPEONATO: " + nombre + " ===");
+
+        // Recorrer carreras
+        for (int i = 0; i < carreras.length; i++) {
+            if (carreras[i] != null) {
+                carreras[i].ejecutarCarrera();
+            }
+        }
+
+        campeonatoIniciado = true;
+        return true;
     }
 
     public void imprimirResultado() {
