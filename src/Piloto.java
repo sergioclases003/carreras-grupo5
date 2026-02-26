@@ -6,6 +6,7 @@ public class Piloto {
     private Coche coche;
     private double habilidad;
     private Random rand = new Random();
+    private String escuderia;
 
     public Piloto(String nombre, int edad, Coche coche, String nivelHabilidad, String escuderia) {
         this.nombre = nombre;
