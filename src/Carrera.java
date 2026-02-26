@@ -82,7 +82,24 @@ public class Carrera {
                 velocidades[i] = 0;
             }
         }
-        // TODO: ordenar por velocidad media (inserción) y rellenar clasificacion
+        // ordenar por velocidad media (por inserción) y rellenar clasificacion
+        for (int i = 0; i < participantes.length; i++) {
+            clasificacion[i] = participantes[i];
+        }
+
+        for (int i = 1; i < clasificacion.length; i++) {
+            Piloto pilotoAux = clasificacion[i];
+            double velAux = velocidades[i];
+            int j = i - 1;
+
+            while (j >= 0 && velocidades[j] < velAux) {
+                clasificacion[j + 1] = clasificacion[j];
+                velocidades[j + 1] = velocidades[j];
+                j--;
+            }
+            clasificacion[j + 1] = pilotoAux;
+            velocidades[j + 1] = velAux;
+        }
 
         corrida = true;
         return true;
