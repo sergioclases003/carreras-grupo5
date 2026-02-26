@@ -112,7 +112,7 @@ public class Competicion {
 
             for (int i = 0; i < pilotos.length; i++) {
 
-                String escActual = pilotos[i].getEscuderia();
+                String escActual = coche[i].getEscuderia();
 
                 // Comprobar si ya hemos procesado esta escudería
                 boolean yaProcesada = false;
