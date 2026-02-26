@@ -5,9 +5,8 @@ public class Piloto {
     private int edad;
     private Coche coche;
     private double habilidad;
-    private String escuderia;
 
-    public Piloto(String nombre, int edad, Coche coche, String nivelHabilidad, String escuderia) {
+    public Piloto(String nombre, int edad, Coche coche, String nivelHabilidad) {
         this.nombre = nombre;
         this.edad = edad;
         this.coche = coche;
@@ -48,9 +47,4 @@ public class Piloto {
     public Coche getCoche() {
         return coche;
     }
-
-    public String getEscuderia() {
-        return escuderia;
-    }
-
 }

@@ -68,19 +68,7 @@ Representa una competición completa. Tendrá un nombre; además, una competici�
 - Tiene un método `arrancarCampeonato():boolean` que ejecuta todas las carreras una a una. Si ya se había ejecutado el método, no las simula de nuevo y devuelve false; en caso contrario las ejecuta y devuelve true. 
 - Tiene un método `imprimirResultado():void` que imprime el listado de pilotos ordenados por puntuación total. Para ello, tiene que recuperar sus puntuaciones de cada una de las carreras. Por simplicidad, un piloto obtiene 10 puntos si queda de primero en una carrera, 8 puntos si es segundo, 5 puntos si es tercero.  
 - Tiene un método `imprimirResultadoEscudería():void` que hace lo mismo que el anterior, pero no a nivel de Piloto sino de Escudería (tendrá que sumar los puntos de los pilotos que pertenezcan a la misma escudería). _Hint: no hemos trabajado con mapas. Así que primero recorre el array de pilotos contando cuantas escuderías hay y luego crea un array de escuderías, un array de puntos por escudería, y usa esos para ordenar_. 
-
-### Simulador
-
-Esta es la clase que orquesta toda la competición. En esta clase hay que: 
-- Crear 6 coches de 3 escuderías (2 coches por escudería). 
-- Crear 6 pilotos a los que se añaden sus respectivos coches.
-- Crear 4 circuitos.  
-- Crear 2 competiciones. Para cada una: 
-  - Añade 3 carreras. 
-  - Añade a todos los pilotos. 
-  - Arranca el campeonato
-  - Imprime la clasificación final por pilotos y por escuderías.
-  - Intenta ejecutarla de nuevo (no deberían de cambiar los resultados). 
+ 
 
 ### _Trabajo extra_
 
