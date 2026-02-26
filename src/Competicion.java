@@ -125,7 +125,7 @@ public class Competicion {
                 System.out.println("\n=== CLASIFICACIÓN FINAL DE ESCUDERIAS ===");
                 for (int i = 0; i < pilotos.length; i++) {
 
-                    String escActual = pilotos[i].getEscuderia();
+                    String escActual = pilotos[i].getCoche().getEscuderia();
 
                     // Comprobar si ya hemos procesado esta escudería
                     boolean yaProcesada = false;
@@ -142,7 +142,7 @@ public class Competicion {
 
                     int totalPuntos = 0;
                     for (int k = 0; k < pilotos.length; k++) {
-                        if (pilotos[k].getEscuderia().equals(escActual)) {
+                        if (pilotos[k].getCoche().getEscuderia().equals(escActual)) {
                             totalPuntos += rankingPuntos[k];
                         }
                     }
