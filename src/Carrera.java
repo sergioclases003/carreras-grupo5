@@ -47,6 +47,8 @@ public class Carrera {
         }
     }
 
+
+
     // devuelve el circuito de la carrera (sirve para que la competición no repita circuitos)
     public Circuito getCircuito() {
         return circuito;
@@ -64,8 +66,22 @@ public class Carrera {
             return false;
         }
 
-        // TODO: calcular velocidades medias de cada piloto
-        // TODO: comprobar fiabilidad de los coches
+        // calcular velocidades medias de cada piloto
+        double[] velocidades = new double[participantes.length];
+
+        for (int i = 0; i < participantes.length; i++) {
+            velocidades[i] = participantes[i].velocidadMedia();
+            System.out.println(participantes[i].getNombre() + " va a una media de " + velocidades[i] + " km/h");
+        }
+
+        // comprobar fiabilidad de los coches
+        int km = obtenerLongitudTotal();
+        for (int i = 0; i < participantes.length; i++) {
+            if (!participantes[i].getCoche().acabaCarrera(km)) {
+                System.out.println(participantes[i].getNombre() + " ha tenido que abandonar!");
+                velocidades[i] = 0;
+            }
+        }
         // TODO: ordenar por velocidad media (inserción) y rellenar clasificacion
 
         corrida = true;
