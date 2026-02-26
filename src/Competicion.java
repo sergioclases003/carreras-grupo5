@@ -84,24 +84,28 @@ public class Competicion {
             System.out.println("La competicion ya ha empezado no se pueden añadir carreras");
             return false;
         } else {
-            for (int i = 0; i < carreras.length; i++) {
-                if (carreras[i].getCircuito().equals(circuito)) {
-                    System.out.println("Este circuito ya pertenece a esta competicion y tiene una carrera asignada");
-                    return false;
+            if (carreras.length == 0) {
+                System.out.println("Error no hay carreras disponibles");
+            } else {
+                for (int i = 0; i < carreras.length; i++) {
 
+                    if (carreras[i].getCircuito().equals(circuito)) {
+                        System.out.println("Este circuito ya pertenece a esta competicion y tiene una carrera asignada");
+                        return false;
+
+                    }
                 }
-            }
-            Carrera[] arrayNuevo = new Carrera[carreras.length + 1];
-            for (int i = 0; i < carreras.length; i++) {
-                arrayNuevo[i] = carreras[i];
-            }
-            arrayNuevo[arrayNuevo.length -1] = carreraNueva ;
-            carreras = arrayNuevo;
-            System.out.println("Carrera añadida correctamente al campeonato...");
-
+                Carrera[] arrayNuevo = new Carrera[carreras.length + 1];
+                for (int i = 0; i < carreras.length; i++) {
+                    arrayNuevo[i] = carreras[i];
+                }
+                arrayNuevo[arrayNuevo.length - 1] = carreraNueva;
+                carreras = arrayNuevo;
+                System.out.println("Carrera añadida correctamente al campeonato...");
 
 
             }
+        }
             return true;
         }
         public void imprimirResultadoEscuderia () {
@@ -112,6 +116,7 @@ public class Competicion {
             if (pilotos.length == 0) {
                 System.out.println("ERROR NO HAY PILOTOS EN LA CARRERA.....");
             } else {
+                System.out.println("\n=== CLASIFICACIÓN FINAL DE ESCUDERIAS ===");
                 for (int i = 0; i < pilotos.length; i++) {
 
                     String escActual = pilotos[i].getEscuderia();
@@ -137,7 +142,6 @@ public class Competicion {
                     }
                     escuderiasProcesadas[contadorEsc] = escActual;
                     contadorEsc++;
-                    System.out.println("\n=== CLASIFICACIÓN FINAL DE ESCUDERIAS ===");
                     System.out.println("Escudería: " + escActual + " → Puntos totales: " + totalPuntos);
                 }
             }
