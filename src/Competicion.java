@@ -109,34 +109,37 @@ public class Competicion {
             int[] rankingPuntos = calcularPuntos();
 
             int contadorEsc = 0;
+            if (pilotos.length == 0) {
+                System.out.println("ERROR NO HAY PILOTOS EN LA CARRERA.....");
+            } else {
+                for (int i = 0; i < pilotos.length; i++) {
 
-            for (int i = 0; i < pilotos.length; i++) {
+                    String escActual = pilotos[i].getEscuderia();
 
-                String escActual = pilotos[i].getEscuderia();
-
-                // Comprobar si ya hemos procesado esta escudería
-                boolean yaProcesada = false;
-                for (int j = 0; j < contadorEsc; j++) {
-                    if (escuderiasProcesadas[j].equals(escActual)) {
-                        yaProcesada = true;
-                        break;
+                    // Comprobar si ya hemos procesado esta escudería
+                    boolean yaProcesada = false;
+                    for (int j = 0; j < contadorEsc; j++) {
+                        if (escuderiasProcesadas[j].equals(escActual)) {
+                            yaProcesada = true;
+                            break;
+                        }
                     }
-                }
 
-                if (yaProcesada) {
-                    continue;
-                }
-
-                int totalPuntos = 0;
-                for (int k = 0; k < pilotos.length; k++) {
-                    if (pilotos[k].getEscuderia().equals(escActual)) {
-                        totalPuntos += rankingPuntos[k];
+                    if (yaProcesada) {
+                        continue;
                     }
-                }
-                escuderiasProcesadas[contadorEsc] = escActual;
-                contadorEsc++;
 
-                System.out.println("Escudería: " + escActual + " → Puntos totales: " + totalPuntos);
+                    int totalPuntos = 0;
+                    for (int k = 0; k < pilotos.length; k++) {
+                        if (pilotos[k].getEscuderia().equals(escActual)) {
+                            totalPuntos += rankingPuntos[k];
+                        }
+                    }
+                    escuderiasProcesadas[contadorEsc] = escActual;
+                    contadorEsc++;
+                    System.out.println("\n=== CLASIFICACIÓN FINAL DE ESCUDERIAS ===");
+                    System.out.println("Escudería: " + escActual + " → Puntos totales: " + totalPuntos);
+                }
             }
         }
         public int [] calcularPuntos(){
