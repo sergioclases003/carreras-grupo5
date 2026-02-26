@@ -74,7 +74,14 @@ public class Carrera {
             System.out.println(participantes[i].getNombre() + " va a una media de " + velocidades[i] + " km/h");
         }
 
-        // TODO: comprobar fiabilidad de los coches
+        // comprobar fiabilidad de los coches
+        int km = obtenerLongitudTotal();
+        for (int i = 0; i < participantes.length; i++) {
+            if (!participantes[i].getCoche().acabaCarrera(km)) {
+                System.out.println(participantes[i].getNombre() + " ha tenido que abandonar!");
+                velocidades[i] = 0;
+            }
+        }
         // TODO: ordenar por velocidad media (inserción) y rellenar clasificacion
 
         corrida = true;
