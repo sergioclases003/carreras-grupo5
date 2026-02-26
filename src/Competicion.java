@@ -52,14 +52,20 @@ public class Competicion {
     }
 
     public void imprimirResultado() {
-        Piloto[] rankingPilotos = new Piloto[pilotos.length];
-        int[] rankingPuntos =calcularPuntos();
 
-        // Ordenar por puntos
+        Piloto[] rankingPilotos = new Piloto[pilotos.length];
+        for (int i = 0; i < pilotos.length; i++) {
+            rankingPilotos[i] = pilotos[i];
+        }
+
+        int[] rankingPuntos = calcularPuntos();
+
+
         for (int i = 1; i < rankingPuntos.length; i++) {
             int puntosAux = rankingPuntos[i];
             Piloto pilotoAux = rankingPilotos[i];
             int j = i - 1;
+
 
             while (j >= 0 && rankingPuntos[j] < puntosAux) {
                 rankingPuntos[j + 1] = rankingPuntos[j];
@@ -70,9 +76,12 @@ public class Competicion {
             rankingPilotos[j + 1] = pilotoAux;
         }
 
+
         System.out.println("\n=== CLASIFICACIÓN FINAL DE PILOTOS ===");
         for (int i = 0; i < rankingPilotos.length; i++) {
-            System.out.println((i + 1) + "º - " + rankingPilotos[i].getNombre() + ": " + rankingPuntos[i] + " pts");
+            if (rankingPilotos[i] != null) {
+                System.out.println((i + 1) + "º - " + rankingPilotos[i].getNombre() + ": " + rankingPuntos[i] + " pts");
+            }
         }
     }
 
