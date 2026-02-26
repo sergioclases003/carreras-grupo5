@@ -53,7 +53,11 @@ public class Competicion {
 
     public void imprimirResultado() {
         Piloto[] rankingPilotos = new Piloto[pilotos.length];
-        int[] rankingPuntos =calcularPuntos(); 
+        for (int i = 0; i < pilotos.length; i++) {
+            rankingPilotos[i] = pilotos[i];
+        }
+
+        int[] rankingPuntos = calcularPuntos();
 
         // Ordenar por puntos
         for (int i = 1; i < rankingPuntos.length; i++) {
@@ -72,7 +76,9 @@ public class Competicion {
 
         System.out.println("\n=== CLASIFICACIÓN FINAL DE PILOTOS ===");
         for (int i = 0; i < rankingPilotos.length; i++) {
-            System.out.println((i + 1) + "º - " + rankingPilotos[i].getNombre() + ": " + rankingPuntos[i] + " pts");
+            if (rankingPilotos[i] != null) {
+                System.out.println((i + 1) + "º - " + rankingPilotos[i].getNombre() + ": " + rankingPuntos[i] + " pts");
+            }
         }
     }
 
@@ -119,7 +125,7 @@ public class Competicion {
                 System.out.println("\n=== CLASIFICACIÓN FINAL DE ESCUDERIAS ===");
                 for (int i = 0; i < pilotos.length; i++) {
 
-                    String escActual = pilotos[i].getCoche().getEscuderia();
+                    String escActual = pilotos[i].getEscuderia();
 
                     // Comprobar si ya hemos procesado esta escudería
                     boolean yaProcesada = false;
@@ -136,7 +142,7 @@ public class Competicion {
 
                     int totalPuntos = 0;
                     for (int k = 0; k < pilotos.length; k++) {
-                        if (pilotos[k].getCoche().getEscuderia().equals(escActual)) {
+                        if (pilotos[k].getEscuderia().equals(escActual)) {
                             totalPuntos += rankingPuntos[k];
                         }
                     }
