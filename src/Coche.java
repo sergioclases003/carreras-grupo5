@@ -24,8 +24,8 @@ public class Coche {
         return fiabilidad;
     }
 
-    public boolean acabaCarrera(int kilometros) {
-            int tramos = kilometros / 5;
+    public boolean acabaCarrera(double kilometros) {
+            double tramos = kilometros / 5;
             for (int i = 0; i < tramos; i++) {
                 double aleatorio = rand.nextDouble();
                 if (aleatorio > fiabilidad) {
