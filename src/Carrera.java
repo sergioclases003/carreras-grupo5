@@ -112,7 +112,7 @@ public class Carrera {
                 if (clasificacion[i] != null && clasificacion[i].equals(p)) {
                     return i + 1;
                 }
-            }g
+            }
         }
         return 0; // en caso de no encontrar el piloto
     }
