@@ -5,7 +5,6 @@ public class Piloto {
     private int edad;
     private Coche coche;
     private double habilidad;
-    private Random rand = new Random();
     private String escuderia;
 
     public Piloto(String nombre, int edad, Coche coche, String nivelHabilidad, String escuderia) {
@@ -13,6 +12,7 @@ public class Piloto {
         this.edad = edad;
         this.coche = coche;
 
+        Random rand = new Random();
         switch (nivelHabilidad) {
             case "Excelente":
                 this.habilidad = 0.9 + rand.nextDouble() * (1 - 0.9);
@@ -27,7 +27,9 @@ public class Piloto {
                 this.habilidad = 0.6;
         }
     }
+
     public double velocidadMedia() {
+        Random rand = new Random();
         double factorAleatorio = 0.9 + rand.nextDouble() * (1 - 0.9);
 
         return coche.getVelocidad_maxima()
@@ -46,4 +48,9 @@ public class Piloto {
     public Coche getCoche() {
         return coche;
     }
+
+    public String getEscuderia() {
+        return escuderia;
+    }
+
 }
