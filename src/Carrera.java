@@ -29,7 +29,7 @@ public class Carrera {
     // métodos y getters y setters
 
     // Calcula la distancia total de la carrera (longitud del circuito * vueltas)
-    public double obtenerLongitudTotal() {
+    public int obtenerLongitudTotal() {
         return circuito.getLongitud() * vueltas;
     }
 
@@ -75,7 +75,7 @@ public class Carrera {
         }
 
         // comprobar fiabilidad de los coches
-        double km = obtenerLongitudTotal();
+        int km = obtenerLongitudTotal();
         for (int i = 0; i < participantes.length; i++) {
             if (!participantes[i].getCoche().acabaCarrera(km)) {
                 System.out.println(participantes[i].getNombre() + " ha tenido que abandonar!");
@@ -103,6 +103,18 @@ public class Carrera {
 
         corrida = true;
         return true;
+    }
+
+    // devuelve el puesto de un piloto en la carrera (1 para el primero, 2 para el segundo etc)
+    public int getPosicionDePiloto(Piloto p) {
+        if (clasificacion != null) {
+            for (int i = 0; i < clasificacion.length; i++) {
+                if (clasificacion[i] != null && clasificacion[i].equals(p)) {
+                    return i + 1;
+                }
+            }g
+        }
+        return 0; // en caso de no encontrar el piloto
     }
 
 }
