@@ -79,7 +79,7 @@ public class Competicion {
     //Sergio
 
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
-        Carrera carreraNueva = new Carrera(circuito,vueltas,pilotos);
+        Carrera carreraNueva = new Carrera(circuito,vueltas);
         if (campeonatoIniciado) {
             System.out.println("La competicion ya ha empezado no se pueden añadir carreras");
             return false;
@@ -147,6 +147,9 @@ public class Competicion {
             for (int i = 0; i < pilotos.length; i++) {
 
                 int sumaPuntos = 0;
+
+
+
 
                 for (int j = 0; j < carreras.length; j++) {
                     if (carreras[j] != null) {
