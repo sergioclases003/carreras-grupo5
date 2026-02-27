@@ -8,6 +8,14 @@ public class Competicion {
 
     // Métodos
 
+
+    public Competicion(String nombre, boolean campeonatoIniciado) {
+        this.nombre = nombre;
+        this.pilotos = new Piloto[0];
+        this.carreras = new Carrera[0];
+        this.campeonatoIniciado = campeonatoIniciado;
+    }
+
     public boolean anhadirPiloto(Piloto piloto) {
 
         if (campeonatoIniciado){
