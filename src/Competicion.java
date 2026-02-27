@@ -9,10 +9,10 @@ public class Competicion {
     // Métodos
 
 
-    public Competicion(String nombre, Piloto[] pilotos, Carrera[] carreras, boolean campeonatoIniciado) {
+    public Competicion(String nombre, boolean campeonatoIniciado) {
         this.nombre = nombre;
-        this.pilotos = pilotos;
-        this.carreras = carreras;
+        this.pilotos = new Piloto[0];
+        this.carreras = new Carrera[0];
         this.campeonatoIniciado = campeonatoIniciado;
     }
 
