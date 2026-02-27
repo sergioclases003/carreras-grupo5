@@ -29,7 +29,7 @@ public class Carrera {
     // métodos y getters y setters
 
     // Calcula la distancia total de la carrera (longitud del circuito * vueltas)
-    public int obtenerLongitudTotal() {
+    public double obtenerLongitudTotal() {
         return circuito.getLongitud() * vueltas;
     }
 
@@ -75,7 +75,7 @@ public class Carrera {
         }
 
         // comprobar fiabilidad de los coches
-        int km = obtenerLongitudTotal();
+        double km = obtenerLongitudTotal();
         for (int i = 0; i < participantes.length; i++) {
             if (!participantes[i].getCoche().acabaCarrera(km)) {
                 System.out.println(participantes[i].getNombre() + " ha tenido que abandonar!");
