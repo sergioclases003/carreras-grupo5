@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class Simulador {
         public static void main(String[] args) {
 
+
             Coche coche1 = new Coche("Ferrari", 320, 0.90);
             Coche coche2 = new Coche("Ferrari", 315, 0.90);
             Coche coche3 = new Coche("Alpine", 310, 0.60);
@@ -17,5 +18,6 @@ public class Simulador {
             Piloto piloto6 = new Piloto("Isack Hadjar", 28, coche6, "Mediocre");
 
             String[] circuitos = {"Monaco", "Silverstone", "Spa", "Monza"};
+
         }
 }
