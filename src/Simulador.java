@@ -24,10 +24,6 @@ public class Simulador {
         //Competicion
         Competicion Formula1_2025 = new Competicion("Fórmula1" , false);
 
-        //Carreras
-        Formula1_2025.anhadirCarrera(Spa, 44);
-        Formula1_2025.anhadirCarrera(Monaco,78);
-        Formula1_2025.anhadirCarrera(Silverstone,52);
 
         //Pilotos
         Formula1_2025.anhadirPiloto(piloto1);
@@ -37,10 +33,12 @@ public class Simulador {
         Formula1_2025.anhadirPiloto(piloto5);
         Formula1_2025.anhadirPiloto(piloto6);
 
+
         //Carreras
         Formula1_2025.anhadirCarrera(Spa, 44);
         Formula1_2025.anhadirCarrera(Monaco,78);
         Formula1_2025.anhadirCarrera(Silverstone,52);
+
 
         //Arrancar Campeonato
         Formula1_2025.arrancarCampeonato();

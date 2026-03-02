@@ -71,7 +71,7 @@ public class Carrera {
 
         for (int i = 0; i < participantes.length; i++) {
             velocidades[i] = participantes[i].velocidadMedia();
-            System.out.println(participantes[i].getNombre() + " va a una media de " + velocidades[i] + " km/h");
+            System.out.printf("%s va a una media de %.2f km/h%n", participantes[i].getNombre(), velocidades[i]);
         }
 
         // comprobar fiabilidad de los coches
