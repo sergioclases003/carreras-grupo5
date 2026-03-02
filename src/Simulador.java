@@ -22,7 +22,7 @@ public class Simulador {
         Circuito Barcelona = new Circuito("Barcelona", 4655);
 
         //Competicion
-        Competicion Formula1_2025 = new Competicion("Fórmula1");
+        Competicion Formula1_2025 = new Competicion("Fórmula1", false);
 
         //Carreras
         Formula1_2025.anhadirCarrera(Spa, 44);
@@ -45,5 +45,31 @@ public class Simulador {
 
         //Resultado
         Formula1_2025.imprimirResultado();
+
+        //Competición 2
+        Competicion Formula1_2026 = new Competicion ("Formula 1", false);
+
+        //Carreras
+        Formula1_2026.anhadirCarrera(Monaco,78);
+        Formula1_2026.anhadirCarrera(Barcelona,66);
+        Formula1_2026.anhadirCarrera(Spa,44);
+
+        //Pilotos
+        Formula1_2026.anhadirPiloto(piloto1);
+        Formula1_2026.anhadirPiloto(piloto2);
+        Formula1_2026.anhadirPiloto(piloto3);
+        Formula1_2026.anhadirPiloto(piloto4);
+        Formula1_2026.anhadirPiloto(piloto5);
+        Formula1_2026.anhadirPiloto(piloto6);
+
+        //Arrancar Campeonato
+        Formula1_2026.arrancarCampeonato();
+
+        //Resultados Escudería
+        Formula1_2026.imprimirResultadoEscuderia();
+
+        //Resultado
+        Formula1_2026.imprimirResultado();
+
     }
 }
