@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class Competicion {
     private String nombre;
-    private Piloto[] pilotos;
+        private Piloto[] pilotos;
     private Carrera[] carreras;
     private boolean campeonatoIniciado;
 
@@ -98,9 +98,6 @@ public class Competicion {
             System.out.println("La competicion ya ha empezado no se pueden añadir carreras");
             return false;
         } else {
-            if (carreras.length == 0) {
-                System.out.println("Error no hay carreras disponibles");
-            } else {
                 for (int i = 0; i < carreras.length; i++) {
 
                     if (carreras[i].getCircuito().equals(circuito)) {
@@ -119,7 +116,7 @@ public class Competicion {
 
 
             }
-        }
+
             return true;
         }
         public void imprimirResultadoEscuderia () {
