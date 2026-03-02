@@ -21,17 +21,13 @@ public class Simulador {
         Circuito Spa = new Circuito("Spa", 7004);
         Circuito Barcelona = new Circuito("Barcelona", 4655);
 
-<<<<<<< HEAD
         //Competicion
         Competicion Formula1_2025 = new Competicion("Fórmula1" , false);
-=======
-        Competicion Formula1_2025 = new Competicion("Fórmula1",false);
 
         //Carreras
         Formula1_2025.anhadirCarrera(Spa, 44);
         Formula1_2025.anhadirCarrera(Monaco,78);
         Formula1_2025.anhadirCarrera(Silverstone,52);
->>>>>>> 821de78d5fed3739a2777a6a3759e8ccb4072699
 
         //Pilotos
         Formula1_2025.anhadirPiloto(piloto1);
